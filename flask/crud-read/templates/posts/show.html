@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Example application</title>
+  </head>
+  <body>
+  <a href="/posts">Posts</a>
+    <!-- BEGIN (write your solution here) -->
+    <table>
+        {% for key in post.keys() %}
+            <tr>
+                <td>{{ "{} : {}".format(key, post[key]) }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <!-- END -->
+  </body>
+</html>
+
+
+

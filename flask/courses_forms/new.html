@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Example application</title>
+  </head>
+  <body>
+<!-- BEGIN (write your solution here) -->  
+  <form action="/courses" method="POST">
+    <div>
+        <label>
+        Paid
+        <select name="paid">
+            <option {{ 'selected' if data.paid  else '' }} value="Free"> Бесплатный курс</option>
+            <option {{ 'selected' if data.paid  else '' }} value="Paid">Платный курс</option>
+        </select>
+        </label>
+    </div>
+    <div>
+        <label>
+        Title
+        <input name="title" value="{{ data.title }}">
+        </label>
+    </div>
+    <input type="submit" name="Post">
+  </form>
+
+  {% if error %}
+    <div>
+        Error: {{ error }}
+    </div>
+  {% endif %}
+<!-- END -->
+  </body>
+</html>
+
+
+

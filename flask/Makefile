@@ -1,3 +1,3 @@
 
 start:
-	flask --app simple_app run --port 8000
+	flask --app flash/test run --port 8000

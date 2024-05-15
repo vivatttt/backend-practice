@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Example application</title>
+  </head>
+  <body>
+<!-- BEGIN (write your solution here) -->
+    
+    <table>
+        {% for post in posts %}
+        <tr>
+            {% for key in post.keys() %}
+            <td>{{ "{} : {}".format(key, post[key]) }}</td>
+            {% endfor %}
+          
+            <td><a href="/posts/{{ post['slug'] }}">Ссылка</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    {% if cur_page > 1 %}
+        <a href="/posts?page={{ cur_page - 1 }}">Назад</a>
+    {% endif %}
+    <a href="/posts?page={{ cur_page + 1 }}">Вперед</a>
+    
+<!-- END -->
+  </body>
+</html>
