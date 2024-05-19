@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Example application</title>
+  </head>
+  <body>
+  <a href="{{ url_for('posts_get') }}">Посты</a>
+  <!-- BEGIN (write your solution here) -->
+    <form action="/posts" method="POST">
+        
+        <input type="text" name="title" value="{{ posts.get('title', '') }}">
+        <input type="text" name="body" value="{{ posts.get('body', '') }}">
+
+        <button type="submit">Отправить</button>
+
+    </form>
+    {% if errors %}
+        {{ errors }}
+    {% endif %}
+   
+  <!-- END -->
+  </body>
+</html>
+
+
+
+
+
+
